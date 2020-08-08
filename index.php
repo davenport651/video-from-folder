@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Gallery from Folder Demo</title>
+<title>Mobile Video Gallery</title>
 <style type="text/css">
 <!--
 li{
@@ -17,15 +17,17 @@ li{
 
 <body>
 
+<p><h1>Videos 4 Mobile</h1></p>
+<p>Here are some videos to stream or download for the kids:</p>
 <ul>
 	<?php
-		$dirname = "images/";
-		$images = scandir($dirname);
-		shuffle($images);
+		$dirname = "videos/";
+		$videos = scandir($dirname);
+		shuffle($videos);
 		$ignore = array(".", "..");
-		foreach($images as $curimg){
+		foreach($videos as $curimg){
 			if(!in_array($curimg, $ignore)) {
-				echo "<li><a href=\"$dirname$curimg\"><img src='img.php?src=$dirname$curimg&w=300&zc=1' alt='' /></a></li>\n ";
+				echo "<li><a href=\"$dirname$curimg\">$curimg<br><video preload=\"none\" controls height=\"150\" muted><source src=$dirname$curimg alt='' type=\"video/mp4\"></video></a></li>\n ";
 			}
 		} 				
 	?>
