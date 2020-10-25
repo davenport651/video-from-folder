@@ -27,7 +27,7 @@ li{
 		$ignore = array(".", "..");
 		foreach($videos as $curimg){
 			if(!in_array($curimg, $ignore)) {
-				echo "<li><a href=\"$dirname$curimg\">$curimg<br><video preload=\"none\" controls height=\"150\" muted><source src=$dirname$curimg alt='' type=\"video/mp4\"></video></a></li>\n ";
+				echo "<li><a href=\"$dirname$curimg\">$curimg<br><video preload=\"none\" controls height=\"150\" muted><source src=\"$dirname$curimg\" alt='' type=\"video/mp4\"></video></a></li>\n ";
 			}
 		} 				
 	?>
